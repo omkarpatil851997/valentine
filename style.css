@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top, #a11d35, #3b0b17);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.card {
+  position: relative;
+  background: linear-gradient(180deg, #16060b, #22080f);
+  border-radius: 18px;
+  padding: 28px 24px 32px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  text-align: center;
+  z-index: 1;
+}
+
+.tiny-title {
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.main-text {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.main-text span {
+  color: #ff5c8a;
+}
+
+.sub-text {
+  margin-top: 12px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0 14px;
+}
+
+.btn {
+  flex: 1;
+  border: none;
+  padding: 12px 0;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.yes {
+  background: linear-gradient(90deg, #ff5c8a, #ff87a5);
+  color: #fff;
+}
+
+.no {
+  background: #6b1b2a;
+  color: #ffd6df;
+}
+
+.finalyes {
+  background: linear-gradient(90deg, #ff5c8a, #ff87a5);
+  color: #fff;
+}
+
+.finalno {
+  background: #6b1b2a;
+  color: #ffd6df;
+}
+
+.promise-text {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+.progress-wrapper {
+  margin-top: 10px;
+}
+
+.progress-title {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+
+.progress-bar {
+  position: relative;
+  background: #3a0e1a;
+  border-radius: 50px;
+  height: 8px;
+  overflow: visible;
+}
+
+.progress-fill {
+  position: relative;
+  height: 8px;
+  width: 0%;
+  background: linear-gradient(90deg, #ff5c8a, #ff9eb8);
+  border-radius: 50px;
+  transition: width 1.8s ease;
+}
+
+/* Proper slider knob */
+.progress-emoji {
+  position: absolute;
+  top: 50%;
+  right: -14px;   /* push outside fill edge */
+  transform: translateY(-50%);
+  font-size: 22px;   /* slightly larger for slider feel */
+  pointer-events: none;
+}
+
+.progress-note {
+  font-size: 10px;
+  opacity: 0.55;
+  margin-top: 6px;
+}
+
+.buttons.single {
+  margin: 20px 0 14px;
+}
+
+.btn.full {
+  width: 100%;
+}
+
+/* hearts animation */
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.heart {
+  position: absolute;
+  top: -10px;
+  font-size: 25px;
+  animation: fall linear forwards;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+/* playful no button */
+.move {
+  position: relative;
+}
+
+.btn.finalno {
+  position: relative;
+}
+
+/* BIG HEART */
+.big-heart {
+  font-size: 60px;
+  margin: 15px 0;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* BLOOMING ROSES & RINGS */
+.bloom-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.bloom {
+  position: absolute;
+  font-size: 26px;
+  opacity: 0;
+  transform: scale(0.2);
+  animation: bloomPop 3.5s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes bloomPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: scale(1.2) translateY(-10px);
+  }
+
+  60% {
+    transform: scale(1) translateY(-20px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-40px);
+  }
+}
+
+.btn.finalno {
+  white-space: normal;
+  text-align: center;
+}
+
+/* ===== STABLE GLASS SPEECH BUBBLE ===== */
+.speech-bubble {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 22px;
+  font-size: 13px;
+  font-weight: 500;
+  max-width: 240px;
+  text-align: center;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.35),
+    0 0 15px rgba(255, 120, 160, 0.25);
+
+  opacity: 0;
+  animation: bubbleFade 0.3s ease forwards;
+
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Tail */
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border-right: 1px solid rgba(255,255,255,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+
+@keyframes bubbleFade {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== REFINED CAROUSEL ===== */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 18px;
+  overflow: hidden;
+
+  /* FIXED RESPONSIVE HEIGHT */
+  aspect-ratio: 3 / 4; /* Portrait ratio - perfect for your photos */
+  max-height: 520px;
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 18px;
+  background: #000;
+}
+
+/* Transparent Elegant Arrows */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;   /* fully transparent */
+  color: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 28px;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* Subtle hover effect */
+.carousel-btn:hover {
+  color: #fff;
+  transform: translateY(-50%) scale(1.15);
+}
+
+/* Mobile tap feedback */
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+/* Love Note Styling */
+.love-note {
+  margin: 18px 12px 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  color: #ffd6df;
+  min-height: 90px; /* prevents layout jump */
+}
+
+.typing-text::after {
+  content: "|";
+  animation: blink 1s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* Working Glow */
+.glow-name {
+  color: #ff9eb8;
+  font-weight: 600;
+  text-shadow:
+    0 0 8px rgba(255, 120, 160, 0.9),
+    0 0 16px rgba(255, 80, 140, 0.6),
+    0 0 24px rgba(255, 50, 120, 0.4);
+}
